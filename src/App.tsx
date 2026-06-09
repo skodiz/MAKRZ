@@ -265,8 +265,8 @@ const css = `
   .card { background: #FAF8F4; border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; }
   .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
   .icon { width: 46px; height: 46px; border-radius: 14px; background: #F6EBDD; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-  .card-info { flex: 1; min-width: 0; }
-  .title-row { display: flex; justify-content: space-between; align-items: flex-start; }
+  .card-info { flex: 1; min-width: 0;  text-align: left; }
+  .title-row { display: flex; justify-content: space-between; align-items: flex-start;  text-align: left; }
   .atelier-name { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; }
   .members { text-align: left; margin-top: 1px; font-size: 12px; color: #7F7770; }
   .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
