@@ -262,17 +262,17 @@ const css = `
   .search { height: 40px; border-radius: 14px; background: #FAF8F4; color: #B6ADA4; display: flex; align-items: center; gap: 8px; padding: 0 13px; margin-bottom: 14px; font-size: 13px; flex-shrink: 0; }
 
   /* CARDS */
-  .card { background: #FAF8F4; border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; }
-  .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
-  .icon { width: 46px; height: 46px; border-radius: 14px; background: #F6EBDD; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .card { background: #FAF8F4; border-radius: 18px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer; }
+  .card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .icon { width: 42px; height: 42px; border-radius: 14px; background: #F6EBDD; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
   .card-info { flex: 1; min-width: 0;  text-align: left; }
   .title-row { display: flex; justify-content: space-between; align-items: flex-start;  text-align: left; }
   .atelier-name { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; }
   .members { text-align: left; margin-top: 1px; font-size: 12px; color: #7F7770; }
   .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
   .tag { padding: 3px 9px; border-radius: 999px; background: #EFEAE3; color: #5E5750; font-size: 11px; font-weight: 500; }
-  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E3D8CA; padding-top: 8px; text-align: left; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E3D8CA; padding-top: 6px; text-align: left; }
   .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
 
