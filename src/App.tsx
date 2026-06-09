@@ -269,7 +269,7 @@ const css = `
   .title-row { display: flex; justify-content: space-between; align-items: flex-start;  text-align: left; }
   .atelier-name { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; }
   .members { text-align: left; margin-top: 1px; font-size: 12px; color: #7F7770; }
-  .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; margin-right: 1px;}
+  .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
   .tag { padding: 2px 7px; border-radius: 999px; background: #ECE5DB; color: #6B645C; font-size: 10px; font-weight: 500; }
   .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #EFEAE3; padding-top: 6px; text-align: left; }
