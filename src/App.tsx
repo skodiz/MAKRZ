@@ -431,15 +431,6 @@ const css = `
 
 // ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
 
-function StatusBar() {
-  return (
-    <div className="status">
-      <span>9:41</span>
-      <span>▪ ▪ ▪</span>
-    </div>
-  );
-}
-
 function NavBar({ tab, setTab }: { tab: string; setTab: (t: string) => void }) {
   return (
     <div className="nav">
@@ -573,8 +564,7 @@ function AtelierDetail({
 
   return (
     <div className="screen">
-      <StatusBar />
-      <div className="topbar">
+           <div className="topbar">
         <div className="topbar-left">
           <button className="icon-btn" onClick={onBack}><ArrowLeft size={22} strokeWidth={1.8} /></button>
         </div>
