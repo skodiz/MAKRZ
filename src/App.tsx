@@ -459,8 +459,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
 
   return (
     <div className="screen">
-      <StatusBar />
-      <div className="header">
+            <div className="header">
         <div className="logo">MAKRZ</div>
         <div className="header-right">
           <button className="icon-btn"><Search size={20} strokeWidth={1.8} /></button>
@@ -746,8 +745,7 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
   const [open2, setOpen2] = useState(true);
   return (
     <div className="screen">
-      <StatusBar />
-      <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
+            <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
         <div className="topbar-left">
           <button className="icon-btn" onClick={onBack}><ArrowLeft size={22} strokeWidth={1.8} /></button>
           <span className="topbar-title">Fil</span>
@@ -838,8 +836,7 @@ function GalerieAtelier({ atelier, onBack }: { atelier: Atelier | null; onBack: 
 
   return (
     <div className="screen" style={{ position: "relative" }}>
-      <StatusBar />
-      <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
+            <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
         <div className="topbar-left">
           <button className="icon-btn" onClick={onBack}><ArrowLeft size={22} strokeWidth={1.8} /></button>
           <span className="topbar-title">Galerie · {atelier?.name ?? "MAKRZ"}</span>
@@ -903,8 +900,7 @@ function GalerieAtelier({ atelier, onBack }: { atelier: Atelier | null; onBack: 
 function AddResource({ atelier, onBack }: { atelier: Atelier | null; onBack: () => void }) {
   return (
     <div className="screen">
-      <StatusBar />
-      <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
+       <div className="topbar" style={{ borderBottom: "1px solid #E6DDD2" }}>
         <div className="topbar-left">
           <button className="icon-btn" onClick={onBack}><ArrowLeft size={22} strokeWidth={1.8} /></button>
           <span className="topbar-title">Nouvelle ressource</span>
@@ -959,8 +955,7 @@ function AddResource({ atelier, onBack }: { atelier: Atelier | null; onBack: () 
 function FeedScreen() {
   return (
     <div className="screen">
-      <StatusBar />
-      <div className="header">
+          <div className="header">
         <div className="logo">MAKRZ</div>
         <div className="header-right">
           <button className="icon-btn"><Search size={20} strokeWidth={1.8} /></button>
