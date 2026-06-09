@@ -272,9 +272,9 @@ const css = `
   .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
   .tag { padding: 3px 9px; border-radius: 999px; background: #EFEAE3; color: #5E5750; font-size: 11px; font-weight: 500; }
-  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E3D8CA; padding-top: 8px; }
-  .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
-  .time { font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 8px; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E3D8CA; padding-top: 8px; text-align: left; }
+  .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
+  .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
 
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
