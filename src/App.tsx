@@ -268,7 +268,7 @@ const css = `
   .card-info { flex: 1; min-width: 0; }
   .title-row { display: flex; justify-content: space-between; align-items: flex-start; }
   .atelier-name { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; }
-  .members { margin-top: 1px; font-size: 12px; color: #7F7770; }
+  .members { text-align: left; margin-top: 1px; font-size: 12px; color: #7F7770; }
   .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #78917F; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
   .tag { padding: 3px 9px; border-radius: 999px; background: #EFEAE3; color: #5E5750; font-size: 11px; font-weight: 500; }
@@ -352,7 +352,7 @@ const css = `
   .share-ml { margin-left: auto; color: #8B837B; }
 
   /* SECTION */
-  .sect { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8A8A84; margin-bottom: 10px; font-weight: 700; }
+  .sect { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8A8A84; margin-bottom: 10px; font-weight: 700; text-align: left; padding-left: 4px; }
 
   /* RESOURCES */
   .res-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E6DDD2; cursor: pointer; }
