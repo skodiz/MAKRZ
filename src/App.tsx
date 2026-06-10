@@ -281,7 +281,9 @@ const css = `
   .filter-panel { background:#FAF8F4; border-radius:16px; padding:12px; margin:0 0 12px 0; display:flex; flex-direction:column; gap:10px; }
 .filter-row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
 .filter-row span { width:100%; font-size:11px; font-weight:700; color:#7A7169; text-transform:uppercase; letter-spacing:.08em; }
-.filter-row button { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; }
+.filter-choice { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; cursor:pointer; }
+
+.filter-choice.active { background:#7EA38A; color:#FFFFFF; font-weight:700; }
   .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#BD784A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
