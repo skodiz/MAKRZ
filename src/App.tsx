@@ -270,15 +270,6 @@ const css = `
   .atelier-name { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; }
   .members { text-align: left; margin-top: px; font-size: 12px; color: #7F7770; line-height: 18px; }
   .new-badge { display: inline-flex; align-items: center; border-radius: 999px; background: #7EA38A; color: #FFF; font-size: 9px; font-weight: 700; padding: 3px 8px; height: 18px; white-space: nowrap; margin-top: 4px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
-  .tag {
-  padding: 0;
-  height: auto;
-  border: none;
-  background: transparent;
-  font-size: 10px;
-  color: #8A837B;
-}
   .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: none; padding-top: 2px; text-align: left; }
   .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
@@ -493,7 +484,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                     <div className="title-row">
                       <div>
                         <div className="atelier-name">{a.name}</div>
-<div className="members"> {a.members} membres · {a.tags.join(" · ")} </div>
+<div className="members"> {a.members} membres
                       </div>
                       {(a.unread ?? 0) > 0 && (
                         <div className="new-badge">
