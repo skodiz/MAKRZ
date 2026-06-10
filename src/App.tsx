@@ -278,7 +278,8 @@ const css = `
   .filters::-webkit-scrollbar { display: none; }
   .filter { flex-shrink: 0; padding: 6px 13px; border-radius: 999px; background: #F4EFE8; color: #7A7169; font-size: 12px; font-weight: 500; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
   .filter.active { background: #2C2623; color: #FFF; font-weight: 600; }
-  .join-btn { display: inline-flex; align-items: center; justify-content: center; border: none; border-radius: 999px; background: #B26A4A; color: #FFF; font-size: 11px; font-weight: 600; padding: 0 10px; height: 22px; cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif; margin-top: 2px; }
+  .filter-panel { background:#FAF8F4; border-radius:14px; padding:10px 12px; margin-bottom:12px; font-size:12px; color:#6F6862; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#C99A84; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
@@ -452,6 +453,7 @@ function NavBar({ tab, setTab }: { tab: string; setTab: (t: string) => void }) {
 function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [tab, setTab] = useState<"mes" | "discover">("mes");
   const [filter, setFilter] = useState("Tous");
+  const [showFilters, setShowFilters] = useState(false);
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
   const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.description?.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
@@ -501,7 +503,11 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
           </>
         ) : (
           <>
-            <div className="filters"><button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button><button className="filter">Filtres</button></div>
+            <div className="filters">
+              <button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button>
+              <button className={`filter ${showFilters ? "active" : ""}`} onClick={() => setShowFilters(!showFilters)}>Filtres</button>
+              {showFilters && <div className="filter-panel">Matière · Technique · Niveau</div>}
+            </div>
            {visibleDiscover.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
