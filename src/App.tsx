@@ -462,7 +462,6 @@ const [showFilters, setShowFilters] = useState(false);
 const [search, setSearch] = useState("");
 const [activeFilterTab, setActiveFilterTab] = useState<"all" | "filters">("all");
 const [activeFilters, setActiveFilters] = useState<string[]>([]);
-const [joinedIds, setJoinedIds] = useState<number[]>([]);
 const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
 const visibleDiscover = DISCOVER.filter((a) => (a.name.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase())) && (activeFilters.length === 0 || activeFilters.some((f) => a.tags.includes(f))));
   
