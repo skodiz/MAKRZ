@@ -525,17 +525,7 @@ const visibleDiscover = DISCOVER.filter((a) => (a.name.toLowerCase().includes(se
                         <div className="atelier-name">{a.name}</div>
                         <div className="members">{a.members} membres</div>
                       </div>
-                      <button className={`join-btn ${joinedIds.includes(a.id) ? "joined" : ""}`} 
-                        onClick={(e) => {
-  e.stopPropagation();
-  setJoinedIds((ids) =>
-    ids.includes(a.id)
-      ? ids.filter((id) => id !== a.id)
-      : [...ids, a.id]
-  );
-}}
-                        >{joinedIds.includes(a.id) ? "✓" : "Rejoindre"}</button>
-                    </div>
+                                         </div>
                   </div>
                 </div>
                <div className="discover-description full">{a.description}</div>
