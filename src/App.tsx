@@ -272,7 +272,7 @@ const css = `
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
   .discover-description { width:100%; max-width:none; margin:2px 0 0 0; padding:0; font-size:12px; line-height:17px; color:#6F6862; text-align:left; }
   .discover-description.full { margin-left:0; padding-left:0; text-align:left; }
-
+.card > .discover-description { display:block; width:100%; max-width:100%; }
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
