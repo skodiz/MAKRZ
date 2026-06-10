@@ -493,7 +493,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                     <div className="title-row">
                       <div>
                         <div className="atelier-name">{a.name}</div>
-<div className="members"> {a.members} membres · {a.tags.join(" · ")} </div>
+<div className="members"> {a.members} membres </div>
                       </div>
                       {(a.unread ?? 0) > 0 && (
                         <div className="new-badge">
