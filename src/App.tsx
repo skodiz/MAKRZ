@@ -260,7 +260,12 @@ const css = `
 
   /* SEARCH */
   .search { height: 40px; border-radius: 14px; background: #FAF8F4; color: #B6ADA4; display: flex; align-items: center; gap: 8px; padding: 0 13px; margin-bottom: 14px; font-size: 13px; flex-shrink: 0; }
+  .search-input { border: none; outline: none; background: transparent; flex: 1; font-family: 'Inter', system-ui, sans-serif;  font-size: 13px; color: #2C2623;
+}
 
+.search-input::placeholder {
+  color: #B6ADA4;
+}
   /* CARDS */
   .card { background: #FAF8F4; border-radius: 18px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer; }
   .card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
@@ -463,6 +468,8 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [tab, setTab] = useState<"mes" | "discover">("mes");
   const [filter, setFilter] = useState("Tous");
   const discoverFilters = ["Tous", "Céramique", "Photographie", "Textile", "Bois", "Papier"];
+  const [search, setSearch] = useState("");
+  const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) );
 
   return (
     <div className="screen">
@@ -477,15 +484,19 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
         <button className={`tab ${tab === "mes" ? "active" : ""}`} onClick={() => setTab("mes")}>Mes ateliers</button>
         <button className={`tab ${tab === "discover" ? "active" : ""}`} onClick={() => setTab("discover")}>Découvrir</button>
       </div>
-      <div className="content">
-        <div className="search">
-          <Search size={14} color="#B6ADA4" />
-          Rechercher un atelier...
-        </div>
+      <div className="search">
+  <Search size={14} color="#B6ADA4" />
+  <input
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    placeholder="Rechercher un atelier..."
+    className="search-input"
+  />
+</div>
         {tab === "mes" ? (
           <>
             <div className="sect">Actifs récemment</div>
-            {ATELIERS.map((a) => (
+            {visibleAteliers.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
                   <div className="icon">{a.emoji}</div>
