@@ -32,6 +32,7 @@ interface Atelier {
   time?: string;
   unread?: number;
   about: string;
+  description?: string;
 }
 
 interface Post {
