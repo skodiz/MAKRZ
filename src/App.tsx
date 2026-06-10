@@ -282,7 +282,7 @@ const css = `
 .filter-row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
 .filter-row span { width:100%; font-size:11px; font-weight:700; color:#7A7169; text-transform:uppercase; letter-spacing:.08em; }
 .filter-row button { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; }
-  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#7C4527; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#BD784A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
@@ -459,8 +459,9 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [showFilters, setShowFilters] = useState(false);
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
-  const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
+ const visibleDiscover = DISCOVER.filter((a) => (a.name.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase())) && (activeFilters.length === 0 || activeFilters.some((f) => a.tags.includes(f))));
 const [activeFilterTab, setActiveFilterTab] = useState<"all" | "filters">("all");
+  const [activeFilters, setActiveFilters] = useState<string[]>([]);
 const [joinedIds, setJoinedIds] = useState<number[]>([]);
   
   return (
@@ -508,7 +509,10 @@ const [joinedIds, setJoinedIds] = useState<number[]>([]);
           </>
         ) : (
           <>
-            <div className="filters"><button className={`filter ${activeFilterTab === "all" ? "active" : ""}`} onClick={() => { setActiveFilterTab("all"); setShowFilters(false); setFilter("Tous"); }}>Tous</button><button className={`filter ${activeFilterTab === "filters" ? "active" : ""}`} onClick={() => { setActiveFilterTab("filters"); setShowFilters(true); }}>Filtres</button></div>{showFilters && <div className="filter-panel"><div className="filter-row"><span>Matière</span><button>Bois</button><button>Céramique</button><button>Textile</button></div><div className="filter-row"><span>Technique</span><button>Tour</button><button>Sérigraphie</button><button>Broderie</button></div><div className="filter-row"><span>Niveau</span><button>Débutant</button><button>Confirmé</button></div></div>}
+            <div className="filters">
+              <button className={`filter ${activeFilterTab === "all" ? "active" : ""}`} onClick={() => { setActiveFilterTab("all"); setShowFilters(false); setFilter("Tous"); }}>Tous</button>
+              <button className={`filter ${activeFilterTab === "filters" ? "active" : ""}`} onClick={() => { setActiveFilterTab("filters"); setShowFilters(true); }}>Filtres</button></div>
+           {showFilters && <div className="filter-panel"><div className="filter-row"><span>Matière</span><button className={`filter-choice ${activeFilters.includes("Bois") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Bois") ? fs.filter((f) => f !== "Bois") : [...fs, "Bois"])}>Bois</button><button className={`filter-choice ${activeFilters.includes("Céramique") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Céramique") ? fs.filter((f) => f !== "Céramique") : [...fs, "Céramique"])}>Céramique</button><button className={`filter-choice ${activeFilters.includes("Textile") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Textile") ? fs.filter((f) => f !== "Textile") : [...fs, "Textile"])}>Textile</button></div><div className="filter-row"><span>Technique</span><button className={`filter-choice ${activeFilters.includes("Tour") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Tour") ? fs.filter((f) => f !== "Tour") : [...fs, "Tour"])}>Tour</button><button className={`filter-choice ${activeFilters.includes("Sérigraphie") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Sérigraphie") ? fs.filter((f) => f !== "Sérigraphie") : [...fs, "Sérigraphie"])}>Sérigraphie</button><button className={`filter-choice ${activeFilters.includes("Broderie") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Broderie") ? fs.filter((f) => f !== "Broderie") : [...fs, "Broderie"])}>Broderie</button></div><div className="filter-row"><span>Niveau</span><button className={`filter-choice ${activeFilters.includes("Débutant") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Débutant") ? fs.filter((f) => f !== "Débutant") : [...fs, "Débutant"])}>Débutant</button><button className={`filter-choice ${activeFilters.includes("Confirmé") ? "active" : ""}`} onClick={() => setActiveFilters((fs) => fs.includes("Confirmé") ? fs.filter((f) => f !== "Confirmé") : [...fs, "Confirmé"])}>Confirmé</button></div></div>}
            {visibleDiscover.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
