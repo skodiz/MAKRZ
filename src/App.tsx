@@ -284,7 +284,7 @@ const css = `
 .filter-choice { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; cursor:pointer; }
 
 .filter-choice.active { background:#6D9577; color:#FFFFFF; font-weight:700; }
-  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#8C5A3C; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#6F4E37; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
