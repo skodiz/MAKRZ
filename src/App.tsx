@@ -270,8 +270,8 @@ const css = `
   .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: none; padding-top: 2px; text-align: left; }
   .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
-  .discover-description { margin-top:6px; font-size:12px; line-height:17px; color:#6F6862; }
-  .discover-description.full { margin-left:0; grid-column:1 / -1; }
+  .discover-description { margin:4px 0 0 0; padding-left:0; font-size:12px; line-height:17px; color:#6F6862; text-align:left; }
+.discover-description.full { margin-left:0; padding-left:0; }
 
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
