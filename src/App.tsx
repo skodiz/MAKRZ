@@ -110,8 +110,7 @@ const DISCOVER: Atelier[] = [
     name: "Poterie traditionnelle",
     members: 42,
     tags: ["Poterie", "Tour"],
-    last: "Dernière publication il y a 1 jour",
-    about: "Atelier ouvert à tous. Rejoignez la communauté pour partager vos créations.",
+    description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
   },
   {
     id: 6,
@@ -119,8 +118,7 @@ const DISCOVER: Atelier[] = [
     name: "Lutherie",
     members: 15,
     tags: ["Bois", "Guitare"],
-    last: "Dernière publication il y a 3 jours",
-    about: "Atelier ouvert à tous. Rejoignez la communauté pour partager vos créations.",
+   description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
   },
   {
     id: 7,
@@ -128,8 +126,7 @@ const DISCOVER: Atelier[] = [
     name: "Sérigraphie",
     members: 27,
     tags: ["Impression", "Encre"],
-    last: "Dernière publication il y a 5 jours",
-    about: "Atelier ouvert à tous. Rejoignez la communauté pour partager vos créations.",
+   description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
   },
   {
     id: 8,
@@ -137,8 +134,7 @@ const DISCOVER: Atelier[] = [
     name: "Cyanotype",
     members: 19,
     tags: ["Photo", "Botanique"],
-    last: "Dernière publication il y a 1 semaine",
-    about: "Atelier ouvert à tous. Rejoignez la communauté pour partager vos créations.",
+    description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
   },
 ];
 
@@ -284,6 +280,7 @@ const css = `
   .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: none; padding-top: 2px; text-align: left; }
   .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
+  .discover-description { margin-top:6px; font-size:12px; line-height:17px; color:#6F6862; }
 
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
@@ -513,11 +510,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
           </>
         ) : (
           <>
-            <div className="filters">
-              {discoverFilters.map((f) => (
-                <button key={f} className={`filter ${filter === f ? "active" : ""}`} onClick={() => setFilter(f)}>{f}</button>
-              ))}
-            </div>
+            <div className="filters"><button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button><button className="filter">Filtres</button></div>
             {DISCOVER.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
@@ -532,8 +525,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                     </div>
                   </div>
                 </div>
-                <div className="tags">{a.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-                <div className="card-footer"><div className="last-text">{a.last}</div></div>
+                <div className="discover-description">{a.description}</div>
               </div>
             ))}
           </>
