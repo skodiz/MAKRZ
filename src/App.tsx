@@ -22,15 +22,7 @@ import {
 
 type PostType = "Avancement" | "Question" | "Découverte" | "Résultat" | "Sondage";
 
-interface Atelier {
-  id: number;
-  emoji: string;
-  name: string;
-  members: number;
-  tags: string[];
-  about?: string;
-  description?: string;
-}
+interface Atelier { id:number; emoji:string; name:string; members:number; tags:string[]; last?:string; time?:string; unread?:number; about?:string; description?:string; }
 
 interface Post {
   id: number;
