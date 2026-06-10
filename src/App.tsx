@@ -276,10 +276,13 @@ const css = `
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
-  .filter { flex-shrink: 0; padding: 6px 13px; border-radius: 999px; background: #F4EFE8; color: #7A7169; font-size: 12px; font-weight: 500; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
-  .filter.active { background: #2C2623; color: #FFF; font-weight: 600; }
-  .filter-panel { background:#FAF8F4; border-radius:14px; padding:10px 12px; margin-bottom:12px; font-size:12px; color:#6F6862; }
-  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#D7A28A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
+  .filter { height:28px; padding:0 12px; border-radius:999px; border:none; background:#FAF8F4; color:#7A7169; font-size:12px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; }
+.filter.active { background:#2C2623; color:#FFF; font-weight:600; }
+  .filter-panel { background:#FAF8F4; border-radius:16px; padding:12px; margin:0 0 12px 0; display:flex; flex-direction:column; gap:10px; }
+.filter-row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.filter-row span { width:100%; font-size:11px; font-weight:700; color:#7A7169; text-transform:uppercase; letter-spacing:.08em; }
+.filter-row button { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#AB713A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
@@ -456,7 +459,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [showFilters, setShowFilters] = useState(false);
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
-  const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.description?.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
+  const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="screen">
@@ -506,7 +509,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
             <div className="filters">
               <button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button>
               <button className={`filter ${showFilters ? "active" : ""}`} onClick={() => setShowFilters(!showFilters)}>Filtres</button>
-              {showFilters && <div className="filter-panel">Matière · Technique · Niveau</div>}
+             {showFilters && <div className="filter-panel"><div className="filter-row"><span>Matière</span><button>Bois</button><button>Céramique</button><button>Textile</button></div><div className="filter-row"><span>Technique</span><button>Tour</button><button>Sérigraphie</button><button>Broderie</button></div><div className="filter-row"><span>Niveau</span><button>Débutant</button><button>Confirmé</button></div></div>}
             </div>
            {visibleDiscover.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
