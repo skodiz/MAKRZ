@@ -347,8 +347,8 @@ const css = `
   .post-type-badge { margin-left: auto; padding: 3px 9px; border-radius: 999px; background: #F6EBDD; color: #A76437; font-size: 10px; font-weight: 700; flex-shrink: 0; }
   .post-type-badge.question { background: #E6F0EA; color: #4D6A59; }
   .post-type-badge.ressource { background: #EFEAE3; color: #5E5750; }
-  .post-title { font-family: 'Fraunces', serif; font-size: 16px; line-height: 21px; font-weight: 500; color: #2C2623; margin-bottom: 6px; }
-  .post-body { font-size: 13px; line-height: 19px; color: #4E4842; margin-bottom: 10px; }
+ .post-title { font-family:'Fraunces', serif; font-size:16px; line-height:21px; font-weight:500; color:#2C2623; margin-bottom:6px; text-align:left; }
+.post-body { font-size:13px; line-height:19px; color:#4F4842; margin-bottom:10px; text-align:left; }
   .post-img { width: 100%; height: 160px; border-radius: 14px; object-fit: cover; display: block; margin-bottom: 8px; }
   .post-actions { display: flex; align-items: center; gap: 14px; color: #7F7770; font-size: 12px; }
   .post-action { display: flex; align-items: center; gap: 5px; }
