@@ -271,6 +271,7 @@ const css = `
   .last-text { font-size: 12px; color: #6F6862; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; text-align: left; }
   .time { text-align: right; font-size: 11px; color: #B4A79C; flex-shrink: 0; margin-left: 12px; }
   .discover-description { margin-top:6px; font-size:12px; line-height:17px; color:#6F6862; }
+  .discover-description.full { margin-left:0; grid-column:1 / -1; }
 
   /* FILTERS */
   .filters { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 4px; scrollbar-width: none; }
@@ -453,6 +454,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [filter, setFilter] = useState("Tous");
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
+  const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.description?.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="screen">
@@ -500,7 +502,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
         ) : (
           <>
             <div className="filters"><button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button><button className="filter">Filtres</button></div>
-            {DISCOVER.map((a) => (
+           {visibleDiscover.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
                   <div className="icon">{a.emoji}</div>
@@ -514,7 +516,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                     </div>
                   </div>
                 </div>
-                <div className="discover-description">{a.description}</div>
+               <div className="discover-description full">{a.description}</div>
               </div>
             ))}
           </>
