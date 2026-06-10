@@ -28,10 +28,7 @@ interface Atelier {
   name: string;
   members: number;
   tags: string[];
-  last?: string;
-  time?: string;
-  unread?: number;
-  about: string;
+  about?: string;
   description?: string;
 }
 
@@ -463,8 +460,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [tab, setTab] = useState<"mes" | "discover">("mes");
   const [filter, setFilter] = useState("Tous");
   const [search, setSearch] = useState("");
-  const discoverFilters = ["Tous", "Céramique", "Photographie", "Textile", "Bois", "Papier"];
-  const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
+    const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="screen">
