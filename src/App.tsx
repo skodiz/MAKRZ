@@ -100,7 +100,7 @@ const DISCOVER: Atelier[] = [
     name: "Poterie traditionnelle",
     members: 42,
     tags: ["Poterie", "Tour"],
-    description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
+    description: "Un espace pour partager essaisen poterie, techniques et inspirations autour de la poterie traditionnelle.",
   },
   {
     id: 6,
@@ -108,7 +108,7 @@ const DISCOVER: Atelier[] = [
     name: "Lutherie",
     members: 15,
     tags: ["Bois", "Guitare"],
-   description: "Un espace pour partager essais, techniques et inspirations autour de la poterie traditionnelle.",
+   description: "Un espace pour ceux qui aiment la musique et qui ont décidé de fabriquer eux-mêmes leur propre outil d'expression !",
   },
   {
     id: 7,
