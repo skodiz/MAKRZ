@@ -455,7 +455,7 @@ function NavBar({ tab, setTab }: { tab: string; setTab: (t: string) => void }) {
 
 function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [tab, setTab] = useState<"mes" | "discover">("mes");
-  const [filter, setFilter] = useState("Tous");
+  const [, setFilter] = useState("Tous");
   const [showFilters, setShowFilters] = useState(false);
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
