@@ -260,8 +260,7 @@ const css = `
 
   /* SEARCH */
   .search { height: 40px; border-radius: 14px; background: #FAF8F4; color: #B6ADA4; display: flex; align-items: center; gap: 8px; padding: 0 13px; margin-bottom: 14px; font-size: 13px; flex-shrink: 0; }
-  .search-input { border: none; outline: none; background: transparent; flex: 1; font-family: 'Inter', system-ui, sans-serif;  font-size: 13px; color: #2C2623;
-}
+  .search-input { border: none; outline: none; background: transparent; flex: 1; font-family: 'Inter', system-ui, sans-serif;  font-size: 13px; color: #2C2623; }
 
 .search-input::placeholder {
   color: #B6ADA4;
@@ -541,10 +540,8 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                       <button className="join-btn">Rejoindre</button>
                     </div>
                   </div>
-                </div>
                 <div className="tags">{a.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-                <div className="card-footer"><div className="last-text">{a.last}</div></div>
-              </div>
+<div className="card-footer"><div className="last-text">{a.last}</div></div>
             ))}
           </>
         )}
