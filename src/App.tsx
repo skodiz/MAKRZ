@@ -282,7 +282,7 @@ const css = `
 .filter-row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
 .filter-row span { width:100%; font-size:11px; font-weight:700; color:#7A7169; text-transform:uppercase; letter-spacing:.08em; }
 .filter-row button { border:none; border-radius:999px; background:#EFE7DC; color:#6F6862; font-size:11px; padding:5px 9px; }
-  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#AB713A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#7C4527; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
@@ -460,7 +460,9 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [search, setSearch] = useState("");
     const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
   const visibleDiscover = DISCOVER.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) || a.tags.join(" ").toLowerCase().includes(search.toLowerCase()));
-
+const [activeFilterTab, setActiveFilterTab] = useState<"all" | "filters">("all");
+const [joinedIds, setJoinedIds] = useState<number[]>([]);
+  
   return (
     <div className="screen">
             <div className="header">
@@ -506,11 +508,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
           </>
         ) : (
           <>
-            <div className="filters">
-              <button className={`filter ${filter === "Tous" ? "active" : ""}`} onClick={() => setFilter("Tous")}>Tous</button>
-              <button className={`filter ${showFilters ? "active" : ""}`} onClick={() => setShowFilters(!showFilters)}>Filtres</button>
-             {showFilters && <div className="filter-panel"><div className="filter-row"><span>Matière</span><button>Bois</button><button>Céramique</button><button>Textile</button></div><div className="filter-row"><span>Technique</span><button>Tour</button><button>Sérigraphie</button><button>Broderie</button></div><div className="filter-row"><span>Niveau</span><button>Débutant</button><button>Confirmé</button></div></div>}
-            </div>
+            <div className="filters"><button className={`filter ${activeFilterTab === "all" ? "active" : ""}`} onClick={() => { setActiveFilterTab("all"); setShowFilters(false); setFilter("Tous"); }}>Tous</button><button className={`filter ${activeFilterTab === "filters" ? "active" : ""}`} onClick={() => { setActiveFilterTab("filters"); setShowFilters(true); }}>Filtres</button></div>{showFilters && <div className="filter-panel"><div className="filter-row"><span>Matière</span><button>Bois</button><button>Céramique</button><button>Textile</button></div><div className="filter-row"><span>Technique</span><button>Tour</button><button>Sérigraphie</button><button>Broderie</button></div><div className="filter-row"><span>Niveau</span><button>Débutant</button><button>Confirmé</button></div></div>}
            {visibleDiscover.map((a) => (
               <div className="card" key={a.id} onClick={() => onOpen(a)}>
                 <div className="card-top">
@@ -521,7 +519,7 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                         <div className="atelier-name">{a.name}</div>
                         <div className="members">{a.members} membres</div>
                       </div>
-                      <button className="join-btn">Rejoindre</button>
+                      <button className={`join-btn ${joinedIds.includes(a.id) ? "joined" : ""}`} onClick={(e) => { e.stopPropagation(); setJoinedIds((ids) => ids.includes(a.id) ? ids : [...ids, a.id]); }}>{joinedIds.includes(a.id) ? "✓" : "Rejoindre"}</button>
                     </div>
                   </div>
                 </div>
