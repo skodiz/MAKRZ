@@ -279,7 +279,7 @@ const css = `
   .filter { flex-shrink: 0; padding: 6px 13px; border-radius: 999px; background: #F4EFE8; color: #7A7169; font-size: 12px; font-weight: 500; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
   .filter.active { background: #2C2623; color: #FFF; font-weight: 600; }
   .filter-panel { background:#FAF8F4; border-radius:14px; padding:10px 12px; margin-bottom:12px; font-size:12px; color:#6F6862; }
-  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#C99A84; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
+  .join-btn { display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; background:#D7A28A; color:#fff; font-size:11px; font-weight:700; padding:5px 10px; cursor:pointer; }
 
   /* TOPBAR */
   .topbar { padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
