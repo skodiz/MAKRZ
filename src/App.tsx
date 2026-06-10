@@ -260,11 +260,9 @@ const css = `
 
   /* SEARCH */
   .search { height: 40px; border-radius: 14px; background: #FAF8F4; color: #B6ADA4; display: flex; align-items: center; gap: 8px; padding: 0 13px; margin-bottom: 14px; font-size: 13px; flex-shrink: 0; }
-  .search-input { border: none; outline: none; background: transparent; flex: 1; font-family: 'Inter', system-ui, sans-serif;  font-size: 13px; color: #2C2623; }
+.search-input { border:none; outline:none; background:transparent; flex:1; font-family:'Inter', system-ui, sans-serif; font-size:13px; color:#2C2623; }
+.search-input::placeholder { color:#B6ADA4; }
 
-.search-input::placeholder {
-  color: #B6ADA4;
-}
   /* CARDS */
   .card { background: #FAF8F4; border-radius: 18px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer; }
   .card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
@@ -466,9 +464,9 @@ function NavBar({ tab, setTab }: { tab: string; setTab: (t: string) => void }) {
 function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
   const [tab, setTab] = useState<"mes" | "discover">("mes");
   const [filter, setFilter] = useState("Tous");
-  const discoverFilters = ["Tous", "Céramique", "Photographie", "Textile", "Bois", "Papier"];
   const [search, setSearch] = useState("");
-  const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()) );
+  const discoverFilters = ["Tous", "Céramique", "Photographie", "Textile", "Bois", "Papier"];
+  const visibleAteliers = ATELIERS.filter((a) => a.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="screen">
@@ -483,15 +481,8 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
         <button className={`tab ${tab === "mes" ? "active" : ""}`} onClick={() => setTab("mes")}>Mes ateliers</button>
         <button className={`tab ${tab === "discover" ? "active" : ""}`} onClick={() => setTab("discover")}>Découvrir</button>
       </div>
-      <div className="search">
-  <Search size={14} color="#B6ADA4" />
-  <input
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-    placeholder="Rechercher un atelier..."
-    className="search-input"
-  />
-</div>
+      <div className="content">
+        <div className="search"><Search size={14} color="#B6ADA4" /><input className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Rechercher un atelier..." /></div>
         {tab === "mes" ? (
           <>
             <div className="sect">Actifs récemment</div>
@@ -540,8 +531,10 @@ function AteliersList({ onOpen }: { onOpen: (a: Atelier) => void }) {
                       <button className="join-btn">Rejoindre</button>
                     </div>
                   </div>
+                </div>
                 <div className="tags">{a.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-<div className="card-footer"><div className="last-text">{a.last}</div></div>
+                <div className="card-footer"><div className="last-text">{a.last}</div></div>
+              </div>
             ))}
           </>
         )}
