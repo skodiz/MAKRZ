@@ -800,6 +800,7 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
               <div className="comment-text">La texture est superbe.</div>
               <div className="comment-actions"><span>Répondre</span></div>
             </div>
+              </div>
           )}
         </div>
 
