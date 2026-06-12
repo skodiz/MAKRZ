@@ -566,6 +566,9 @@ function AtelierDetail({
   return (
     <div className="screen">
            <div className="topbar">
+             <div className="topbar-left">
+          <button className="icon-btn" onClick={onBack}><ArrowLeft size={22} strokeWidth={1.8} /></button>
+        </div>
         <button className="icon-btn"><MoreHorizontal size={22} strokeWidth={1.8} /></button>
       </div>
 
