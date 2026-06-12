@@ -342,8 +342,8 @@ const css = `
   .post-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
   .post-meta { text-align:left; }
   .av { width: 34px; height: 34px; border-radius: 50%; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
-  .post-author { font-size:14px; font-weight:700; color:#2C2623; margin-bottom:2px; }
-.post-time { font-size:12px; color:#8B837B; margin-top:0; }
+  .post-author { font-size:14px; font-weight:700; color:#2C2623; margin-bottom:0; line-height:16px; }
+.post-time { font-size:12px; color:#8B837B; margin-top:-1px; line-height:13px; }
   .role { display: inline-flex; margin-left: 6px; padding: 2px 6px; border-radius: 999px; background: #EFEAE3; color: #78917F; font-size: 10px; font-weight: 700; vertical-align: middle; }
   .post-type-badge { margin-left: auto; padding: 3px 9px; border-radius: 999px; background: #F6EBDD; color: #A76437; font-size: 10px; font-weight: 700; flex-shrink: 0; }
   .post-type-badge.question { background: #E6F0EA; color: #4D6A59; }
