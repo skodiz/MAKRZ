@@ -382,8 +382,8 @@ const css = `
   .comment-card { background: #FAF8F4; border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; }
   .comment-head { display: flex; gap: 9px; align-items: flex-start; margin-bottom: 8px; }
   .c-av { width: 30px; height: 30px; border-radius: 50%; background: #F6EBDD; color: #5C3F2A; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-  .comment-name { font-size:13px; font-weight:700; color:#2C2623; line-height:15px; margin-bottom:0; }
-.comment-time { font-size:11px; color:#8B837B; margin-top:-2px; line-height:12px; }
+  .comment-name { font-size:13px; font-weight:700; color:#2C2623; }
+.comment-time { font-size:11px; color:#8B837B; }
   .comment-text { font-size:13px; line-height:18px; color:#4E4842; margin-left:39px; text-align:left; }
   .comment-actions { margin-left: 39px; margin-top: 7px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; color: #78917F; }
   .toggle-btn { border: none; background: transparent; padding: 0; color: #9A938C; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 3px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
@@ -775,7 +775,9 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
         <div className="comment-card">
           <div className="comment-head">
             <div className="c-av">LM</div>
-            <div><div className="comment-name">Lucie M.</div><div className="comment-time">il y a 1 h</div></div>
+            <div>
+              <div className="comment-meta"><span className="comment-name">Lucie M.</span><span className="comment-dot">·</span><span className="comment-time">il y a 1 h</span></div>
+            </div>
           </div>
           <div className="comment-text">Magnifique résultat !</div>
           <div className="comment-actions">
@@ -827,7 +829,7 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
 function GalerieAtelier({ atelier, onBack }: { atelier: Atelier | null; onBack: () => void }) {
   const [filter, setFilter] = useState("Toutes");
   const [openPhoto, setOpenPhoto] = useState(false);
-  const [openReplies, setOpenReplies] = useState(true);
+  const [openReplies, setOpenReplies] = useState(false);
 
   const photos = [
     { src: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=700&auto=format&fit=crop", h: 230 },
