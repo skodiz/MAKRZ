@@ -392,6 +392,8 @@ const css = `
   .reply-bar { height: 64px; background: #FAF8F4; border-top: 1px solid #E6DDD2; display: flex; align-items: center; gap: 10px; padding: 0 14px; flex-shrink: 0; }
   .reply-input { flex: 1; height: 40px; border-radius: 999px; border: 1px solid #E6DDD2; background: #FDFBF8; padding: 0 14px; color: #8B837B; font-size: 13px; display: flex; align-items: center; }
   .send-btn { width: 38px; height: 38px; border-radius: 50%; border: none; background: #3F5248; color: #FFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
+.comment-meta { display:flex; align-items:center; gap:5px; line-height:15px; margin-bottom:6px; text-align:left; }
+.comment-dot { font-size:11px; color:#8B837B; }
 
   /* GALLERY */
   .masonry { column-count: 2; column-gap: 8px; }
@@ -788,7 +790,7 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
           </div>
           {open1 && (
             <div className="nested">
-              <div className="comment-head"><div className="c-av">TR</div><div><div className="comment-name">Théo R.</div><div className="comment-time">il y a 45 min</div></div></div>
+             <div className="comment-head"><div className="c-av">TR</div><div className="comment-meta"><span className="comment-name">Théo R.</span><span className="comment-dot">·</span><span className="comment-time">il y a 45 min</span></div></div>
               <div className="comment-text">La texture est superbe.</div>
               <div className="comment-actions"><span>Répondre</span></div>
             </div>
@@ -798,8 +800,8 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
         <div className="comment-card">
           <div className="comment-head">
             <div className="c-av">TR</div>
-            <div><div className="comment-name">Thomas R.</div><div className="comment-time">il y a 30 min</div></div>
-          </div>
+            <div className="comment-meta"><span className="comment-name">Thomas R.</span><span className="comment-dot">·</span><span className="comment-time">il y a 30 min</span></div>
+            </div>
           <div className="comment-text">Tu as utilisé quel émail ?</div>
           <div className="comment-actions">
             <span>Répondre</span>
