@@ -811,7 +811,11 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
           </div>
           {open2 && (
             <div className="nested">
-              <div className="comment-head"><div className="c-av">MD</div><div><div className="comment-name">Marie D.</div><div className="comment-time">il y a 20 min</div></div></div>
+              <div className="comment-head"><div className="c-av">MD</div>
+                <div>
+                  <div className="comment-meta"><span className="comment-name">Marie D.</span><span className="comment-dot">·</span><span className="comment-time">il y a 20 min</span></div>          
+                </div>
+              </div>
               <div className="comment-text">Émail blanc mat Solargil.</div>
               <div className="comment-actions"><span>Répondre</span></div>
             </div>
