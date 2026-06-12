@@ -324,7 +324,7 @@ const css = `
   .type-chip.active { box-shadow: inset 0 0 0 1.5px currentColor; font-weight: 700; }
   .comp-input, .comp-textarea { width: 100%; border: 1px solid #E6DDD2; background: #FDFBF8; border-radius: 12px; padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: #2C2623; outline: none; margin-bottom: 10px; }
   .comp-input { height: 42px; }
-  .comp-textarea { height: 64px; resize: none; line-height: 18px; }
+  .comp-textarea { height: 64px; resize: none; line-height: 1Fpx; }
   .comp-input::placeholder, .comp-textarea::placeholder { color: #B6ADA4; }
   .photo-line { display: flex; align-items: center; justify-content: space-between; color: #7F7770; font-size: 12px; margin-bottom: 12px; }
   .photo-btn { border: none; border-radius: 999px; background: #EFEAE3; color: #5E5750; padding: 6px 12px; font-size: 12px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; }
@@ -389,7 +389,7 @@ const css = `
 .comment-actions { margin-top:7px; display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600; color:#78917F; }
   .toggle-btn { border: none; background: transparent; padding: 0; color: #9A938C; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 3px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .nested { margin-left: 14px; margin-top: 10px; padding-left: 12px; border-left: 1px solid #D8CBBE; }
-  .nested .comment-text, .nested .comment-actions { margin-left: 39px; }
+  .nested .comment-text, .nested .comment-actions { margin-left:0; }
   .reply-bar { height: 64px; background: #FAF8F4; border-top: 1px solid #E6DDD2; display: flex; align-items: center; gap: 10px; padding: 0 14px; flex-shrink: 0; }
   .reply-input { flex: 1; height: 40px; border-radius: 999px; border: 1px solid #E6DDD2; background: #FDFBF8; padding: 0 14px; color: #8B837B; font-size: 13px; display: flex; align-items: center; }
   .send-btn { width: 38px; height: 38px; border-radius: 50%; border: none; background: #3F5248; color: #FFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
