@@ -392,7 +392,7 @@ const css = `
   .reply-bar { height: 64px; background: #FAF8F4; border-top: 1px solid #E6DDD2; display: flex; align-items: center; gap: 10px; padding: 0 14px; flex-shrink: 0; }
   .reply-input { flex: 1; height: 40px; border-radius: 999px; border: 1px solid #E6DDD2; background: #FDFBF8; padding: 0 14px; color: #8B837B; font-size: 13px; display: flex; align-items: center; }
   .send-btn { width: 38px; height: 38px; border-radius: 50%; border: none; background: #3F5248; color: #FFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
-.comment-meta { display:flex; align-items:center; gap:5px; line-height:15px; margin-bottom:2px; }
+.comment-meta { display:flex; align-items:center; gap:0px; line-height:15px; margin-bottom:2px; }
 .comment-dot { font-size:11px; color:#8B837B; }
 
   /* GALLERY */
