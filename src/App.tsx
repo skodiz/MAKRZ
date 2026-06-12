@@ -384,8 +384,9 @@ const css = `
   .c-av { width: 30px; height: 30px; border-radius: 50%; background: #F6EBDD; color: #5C3F2A; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
   .comment-name { font-size:13px; font-weight:700; color:#2C2623; }
 .comment-time { font-size:11px; color:#8B837B; }
-  .comment-text { font-size:13px; line-height:18px; color:#4E4842; margin-left:39px; margin-top:-2; text-align:left; }
-  .comment-actions { margin-left: 39px; margin-top: 7px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; color: #78917F; }
+.comment-content { flex:1; text-align:left; }
+.comment-text { font-size:13px; line-height:18px; color:#4E4842; margin:4px 0 0 0; text-align:left; }
+.comment-actions { margin-top:7px; display:flex; align-items:center; gap:12px; font-size:12px; font-weight:600; color:#78917F; }
   .toggle-btn { border: none; background: transparent; padding: 0; color: #9A938C; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 3px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .nested { margin-left: 39px; margin-top: 10px; padding-left: 12px; border-left: 1px solid #D8CBBE; }
   .nested .comment-text, .nested .comment-actions { margin-left: 39px; }
