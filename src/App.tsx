@@ -338,11 +338,12 @@ const css = `
   /* POSTS */
   .post { background: #FAF8F4; border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; }
   .post.pinned { border-left: 3px solid #78917F; }
-  .pin-label { font-size: 11px; color: #78917F; font-weight: 700; margin-bottom: 8px; }
+  .pin-label { font-size: 11px; color: #78917F; font-weight: 700; margin-bottom: 8px; text-align: left; display:block; width:100%; }
   .post-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .post-meta { text-align:left; }
   .av { width: 34px; height: 34px; border-radius: 50%; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
-  .post-author { font-size: 14px; font-weight: 700; color: #2C2623; }
-  .post-time { font-size: 12px; color: #8B837B; margin-top: 1px; }
+  .post-author { font-size:14px; font-weight:700; color:#2C2623; margin-bottom:2px; }
+.post-time { font-size:12px; color:#8B837B; margin-top:0; }
   .role { display: inline-flex; margin-left: 6px; padding: 2px 6px; border-radius: 999px; background: #EFEAE3; color: #78917F; font-size: 10px; font-weight: 700; vertical-align: middle; }
   .post-type-badge { margin-left: auto; padding: 3px 9px; border-radius: 999px; background: #F6EBDD; color: #A76437; font-size: 10px; font-weight: 700; flex-shrink: 0; }
   .post-type-badge.question { background: #E6F0EA; color: #4D6A59; }
@@ -651,13 +652,15 @@ function AtelierDetail({
             <div className={`post ${p.pinned ? "pinned" : ""}`} key={p.id} onClick={() => onPost(p)}>
               {p.pinned && <div className="pin-label">📌 Épinglé par la référente</div>}
               <div className="post-head">
-                <div className="av" style={{ background: p.avColor }}>{p.av}</div>
-                <div>
-                  <div className="post-author">{p.author}{p.role && <span className="role">{p.role}</span>}</div>
-                  <div className="post-time">{p.time}</div>
-                </div>
-                <div className={`post-type-badge ${p.typeKey}`}>{p.type}</div>
-              </div>
+  <div className="av" style={{ background: p.avColor }}>{p.av}</div>
+
+  <div className="post-meta">
+    <div className="post-author">{p.author}{p.role && <span className="role">{p.role}</span>}</div>
+    <div className="post-time">{p.time}</div>
+  </div>
+
+  <div className={`post-type-badge ${p.typeKey}`}>{p.type}</div>
+</div>
               {p.title && <div className="post-title">{p.title}</div>}
               <div className="post-body">{p.body}</div>
               {p.img && <img className="post-img" src={p.img} alt="" />}
