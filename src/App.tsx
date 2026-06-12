@@ -789,13 +789,30 @@ function PostDetail({ post, onBack }: { post: Post; onBack: () => void }) {
               </div>
             </div>
           </div>
-          {open1 && (
-            <div className="nested">
-             <div className="comment-head"><div className="c-av">TR</div><div className="comment-meta"><span className="comment-name">Théo R.</span><span className="comment-dot">·</span><span className="comment-time">il y a 45 min</span></div></div>
-              <div className="comment-text">La texture est superbe.</div>
-              <div className="comment-actions"><span>Répondre</span></div>
-            </div>
-          )}
+         {open1 && (
+  <div className="nested">
+    <div className="comment-head">
+      <div className="c-av">TR</div>
+
+      <div className="comment-content">
+        <div className="comment-meta">
+          <span className="comment-name">Théo R.</span>
+          <span className="comment-dot">·</span>
+          <span className="comment-time">il y a 45 min</span>
+        </div>
+
+        <div className="comment-text">
+          La texture est superbe.
+        </div>
+
+        <div className="comment-actions">
+          <span>Répondre</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+)}
         </div>
 
         <div className="comment-card">
